@@ -1,1 +1,1 @@
-web: gunicorn app:server
+web: gunicorn cbr_cf_model.server:app
