@@ -3,6 +3,9 @@ from cbr_cf import run_prediction
 
 app = Flask(__name__)
 
+@app.route('/', method=['GET'])
+def home():
+    return "CBR-CF Model"
 
 @app.route('/predict', methods=['POST'])
 def main():
@@ -11,4 +14,4 @@ def main():
 
 
 if __name__ == '__main__':
-    app.run(host='localhost', port=5000)
+    app.run(host="0.0.0.0", port=80)

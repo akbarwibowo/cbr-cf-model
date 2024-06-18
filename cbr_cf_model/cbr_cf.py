@@ -18,11 +18,13 @@ def run_prediction(user_input: dict) -> json:
     indications_map, indication_list = matrix.indications_table()
     input_matrix = []
     input_indications_name = []
+    input_indications_score = 0
 
     for item in indication_list:
         if item in user_input["indications"]:
             input_matrix.append(1)
-            input_indications_name.append(indications_map[item])
+            input_indications_name.append(indications_map[item]['indication_name'])
+            input_indications_score += indications_map[item]['md_score']
         else:
             input_matrix.append(0)
 
@@ -39,6 +41,7 @@ def run_prediction(user_input: dict) -> json:
         "disease": base_matrix[temp_knowledge_id]['disease'],
         "solution": base_matrix[temp_knowledge_id]['solution'],
         "indications": input_indications_name,
+        "md_score": input_indications_score,
         "indications_code": user_input["indications"]
     }
 

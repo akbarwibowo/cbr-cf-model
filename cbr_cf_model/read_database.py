@@ -18,10 +18,15 @@ class CreateMatrix:
         indication_code = self.cursor.fetchall()
         self.cursor.execute("SELECT indication_name FROM indications")
         indication_name = self.cursor.fetchall()
+        self.cursor.execute("SELECT md_score FROM indications")
+        md_score = self.cursor.fetchall()
 
         indications_map = {}
-        for code, name in zip(indication_code, indication_name):
-            indications_map[code[0]] = name[0]
+        for code, name, score in zip(indication_code, indication_name, md_score):
+            indications_map[code[0]] = {
+                "indication_name": name[0],
+                "md_score": score[0]
+            }
 
         return indications_map, list(indications_map.keys())
 
@@ -55,7 +60,7 @@ class CreateMatrix:
         return knowledge_map
 
     def create_matrix(self) -> json:
-        indication_map, indication_codes = self.indications_table()
+        _, indication_codes = self.indications_table()
         indications_list_map = self.indications_list_table()
         knowledge_data = self.knowledge_table()
 
