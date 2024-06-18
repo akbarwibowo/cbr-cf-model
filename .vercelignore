@@ -1,0 +1,11 @@
+.idea/
+tests/
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.log
+*.tmp
+*.md
+.git/
+*.gitignore
