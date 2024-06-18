@@ -3,6 +3,10 @@ from cbr_cf import run_prediction
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return "CBR-CF Model API"
+
 @app.route('/predict', methods=['POST'])
 def main():
     data = request.get_json()
