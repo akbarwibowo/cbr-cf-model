@@ -11,3 +11,6 @@ def home():
 def main():
     data = request.get_json()
     return jsonify(run_prediction(data))
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
