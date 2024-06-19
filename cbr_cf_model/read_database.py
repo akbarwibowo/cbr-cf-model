@@ -31,7 +31,7 @@ class CreateMatrix:
         return indications_map, list(indications_map.keys())
 
     def indications_list_table(self) -> json:
-        self.cursor.execute("SELECT indication_code, knowledge_id FROM indications_list")
+        self.cursor.execute("SELECT indication_code, knowledge_id FROM indication_lists")
         query_list = self.cursor.fetchall()
 
         knowledge_id = [ids[1] for ids in query_list]
@@ -50,7 +50,7 @@ class CreateMatrix:
         return indications_list_map
 
     def knowledge_table(self) -> json:
-        self.cursor.execute("SELECT knowledge_id, disease, solution FROM knowledge_data")
+        self.cursor.execute("SELECT id, disease, solution FROM knowledge_data")
         knowledge_list = self.cursor.fetchall()
 
         knowledge_map = {}
