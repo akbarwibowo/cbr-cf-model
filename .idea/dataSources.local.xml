@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="PY-241.17890.14">
+    <data-source name="http://sql12.freesqldatabase.com" uuid="150cfb5b-0173-477c-bd78-d75e7f63c4b1">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>sql12714474</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>
