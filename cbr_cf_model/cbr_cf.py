@@ -42,7 +42,8 @@ def run_prediction(user_input: dict) -> json:
         "solution": base_matrix[temp_knowledge_id]['solution'],
         "indications": input_indications_name,
         "md_score": input_indications_score,
-        "indications_code": user_input["indications"]
+        "indications_code": user_input["indications"],
+        "probability": float(format(temp_highest_score[0][0], '.2f'))
     }
 
     return return_json
